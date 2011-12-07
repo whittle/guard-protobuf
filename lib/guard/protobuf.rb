@@ -1,9 +1,10 @@
 require 'guard'
 require 'guard/guard'
-require 'guard/guard-protobuf/version'
+require 'guard/protobuf/version'
+require 'protobuf/compiler/compiler'
 
 module Guard
-  class GuardProtobuf < Guard
+  class Protobuf < Guard
 
     # Initialize a Guard.
     # @param [Array<Guard::Watcher>] watchers the Guard file watchers
