@@ -20,7 +20,6 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
   s.add_runtime_dependency 'guard'
-  s.add_runtime_dependency 'ruby_protobuf'
 
   s.add_development_dependency 'bundler'
   s.add_development_dependency 'rspec'

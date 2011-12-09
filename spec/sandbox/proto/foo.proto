@@ -1,0 +1,5 @@
+package dummy;
+
+message Foo {
+  optional string bar = 1;
+}

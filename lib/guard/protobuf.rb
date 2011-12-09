@@ -1,16 +1,25 @@
 require 'guard'
 require 'guard/guard'
 require 'guard/protobuf/version'
-require 'protobuf/compiler/compiler'
 
 module Guard
   class Protobuf < Guard
+    autoload :Compiler, 'guard/protobuf/compiler'
+
+    attr_accessor :compiler
 
     # Initialize a Guard.
     # @param [Array<Guard::Watcher>] watchers the Guard file watchers
     # @param [Hash] options the custom Guard options
     def initialize(watchers = [], options = {})
       super
+      self.compiler = Compiler.with default_options.merge(options)
+    end
+
+    def default_options
+      { :language => :Ruby,
+        :proto_dir => 'proto',
+        :output_dir => 'lib' }
     end
 
     # Call once when Guard starts. Please override initialize method to init stuff.
