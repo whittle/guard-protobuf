@@ -7,6 +7,10 @@ module Guard
           self.output_dir = options[:output_dir]
         end
 
+        def compile(file)
+          exec command(file)
+        end
+
         def command(file)
           "rprotoc".tap do |command|
             command << " -p #{proto_dir}"  if proto_dir
