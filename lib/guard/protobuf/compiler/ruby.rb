@@ -8,7 +8,7 @@ module Guard
         end
 
         def compile(file)
-          exec command(file)
+          system command(file)
         end
 
         def command(file)
