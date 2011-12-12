@@ -2,5 +2,5 @@ guard(:protobuf,
       :language => :Ruby,
       :proto_dir => 'proto',
       :output_dir => 'lib') do
-  watch(%r{^proto/.+\.proto$})
+  watch(%r{.+\.proto$})
 end
